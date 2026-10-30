@@ -6,7 +6,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('.'));
 
 let cabeza = null;
-
+//agrega los datos
 function agregar(datos) {
     const nuevo = { datos: datos, siguiente: null };
 
@@ -21,7 +21,7 @@ function agregar(datos) {
     }
     actual.siguiente = nuevo;
 }
-
+//guarda info
 function guardar() {
     let texto = '';
     let actual = cabeza;
@@ -46,7 +46,7 @@ if (fs.existsSync('actividades.txt')) {
         agregar({ nombre: p[0], correo: p[1], actividad: p[2], estado: p[3] });
     }
 }
-
+//para registrar la act
 app.post('/registrar', (req, res) => {
     const a = req.body;
 
@@ -60,7 +60,7 @@ app.post('/registrar', (req, res) => {
 
     res.send('<h1>¡Actividad registrada con éxito!</h1><a href="/examen2p.html">Volver al formulario</a>');
 });
-
+//por si esta vacio
 app.post('/actualizar', (req, res) => {
     const nombre = req.body.nombre;
     const actividad = req.body.actividad;
@@ -79,12 +79,12 @@ app.post('/actualizar', (req, res) => {
         if (mismoNombre && mismaActividad) {
             actual.datos.estado = estado;
             guardar();
-            return res.redirect('/actualizar.html?resultado=ok');
+            return res.redirect('/actualizar.html?resultado=ok'); //si encontro act
         }
         actual = actual.siguiente;
     }
 
-    res.redirect('/actualizar.html?resultado=noencontrada');
+    res.redirect('/actualizar.html?resultado=noencontrada'); //no encontro act
 });
 
-app.listen(3000, () => console.log('Servidor en http://localhost:3000'));
+app.listen(3000, () => console.log('Servidor en http://localhost:3000')); //confirma q esta prendido

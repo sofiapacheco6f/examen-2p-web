@@ -2,9 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualizar actividad</title>
-    <link rel="stylesheet" href="examen2p.css">
+    <link rel="stylesheet" href="examen2p.css"> <!-- diseño -->
 </head>
 <body>
     <header id="encabezado">
@@ -42,19 +41,20 @@
             <button type="submit" id="reg">Actualizar</button>
         </form>
 
-        <p style="text-align:center"><a href="/examen2p.html">Volver al formulario</a></p>
+        <p style="text-align:center"><a href="/examen2p.html">Volver al formulario</a></p> 
+        <!-- volver al registro -->
     </main>
 
-    <script>
+    <script> 
         const params = new URLSearchParams(window.location.search);
-        const resultado = params.get('resultado');
-        const mensaje = document.getElementById('mensaje');
+        const resultado = params.get('resultado'); 
+        const mensaje = document.getElementById('mensaje'); 
 
         if (resultado === 'ok') {
             mensaje.textContent = '¡Estado actualizado!';
         } else if (resultado === 'noencontrada') {
             mensaje.textContent = 'No se encontró esa actividad. Revisa el nombre y la actividad.';
         }
-    </script>
+    </script> <!-- mensajes de confirmacion -->
 </body>
 </html>

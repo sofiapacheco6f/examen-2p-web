@@ -52,3 +52,20 @@
 #reg :hover{
     background-color: #99F6E4;
 }
+
+table{
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: 'Times New Roman', Times, serif;
+    color: #0F172A;
+}
+
+th, td{
+    border: 1px solid #0EA5A4;
+    padding: 8px 15px;
+    text-align: center;
+}
+
+th{
+    background-color: #99F6E4;
+}

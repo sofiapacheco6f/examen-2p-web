@@ -87,4 +87,45 @@ app.post('/actualizar', (req, res) => {
     res.redirect('/actualizar.html?resultado=noencontrada'); //no encontro act
 });
 
+// consultar: recorre la lista nodo por nodo y arma una fila de la tabla por cada actividad
+app.get('/consultar', (req, res) => {
+    let filas = '';
+    let actual = cabeza;
+
+    while (actual !== null) {
+        const a = actual.datos;
+        filas += '<tr>';
+        filas += '<td>' + a.nombre + '</td>';
+        filas += '<td>' + a.correo + '</td>';
+        filas += '<td>' + a.actividad + '</td>';
+        filas += '<td>' + a.estado + '</td>';
+        filas += '</tr>';
+        actual = actual.siguiente;
+    }
+
+    // si la lista esta vacia, avisa que no hay nada
+    if (filas === '') {
+        filas = '<tr><td colspan="4">No hay actividades registradas</td></tr>';
+    }
+
+    // manda la pagina completa con la tabla
+    res.send(
+        '<!DOCTYPE html>' +
+        '<html lang="es"><head><meta charset="UTF-8">' +
+        '<title>Consultar actividades</title>' +
+        '<link rel="stylesheet" href="examen2p.css"></head>' +
+        '<body>' +
+        '<header id="encabezado"><h1 id="titulo">CONTAPC</h1>' +
+        '<div id="inicio"><h3>Actividades registradas</h3></div></header>' +
+        '<table>' +
+        '<tr><th>Nombre</th><th>Correo</th><th>Actividad</th><th>Estado</th></tr>' +
+        filas +
+        '</table>' +
+        '<p style="text-align:center">' +
+        '<a href="/examen2p.html">Registrar</a> | <a href="/actualizar.html">Actualizar</a>' +
+        '</p>' +
+        '</body></html>'
+    );
+});
+
 app.listen(3000, () => console.log('Servidor en http://localhost:3000')); //confirma q esta prendido

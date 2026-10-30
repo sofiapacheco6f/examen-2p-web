@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de actividades</title>
+    <link rel="stylesheet" href="examen2p.css">
+</head>
+<body>
+    <header id="encabezado">
+        <h1 id="titulo">CONTAPC</h1>
+        <div id="inicio">
+            <h3>Gestión de actividades</h3>
+            <h4>Para empleados</h4>
+            <p>Favor de ingresar sus actividades en el apartado y su nombre.</p>
+        </div>
+    </header>
+
+    <main>
+        <form id="formulario" action="/registrar" method="POST">
+            <h2>Datos del empleado</h2>
+
+            <div class="nombrein">
+                <label for="nombre">Nombre</label><br>
+                <input type="text" id="nombre" name="nombre"><br>
+            </div>
+
+            <div class="correoin">
+                <label>Correo</label><br>
+                <input type="email" id="correo" name="correo"><br>
+            </div>
+
+            <div class="act">
+                <label>Actividad designada</label><br>
+                <input type="text" id="actd" name="actividad"><br>
+            </div>
+
+            <div class="estadoact">
+                <label>Estado de la actividad</label><br>
+                <div id="estados">
+                    <label><input type="radio" name="estado" value="Pendiente" checked> Pendiente</label><br>
+                    <label><input type="radio" name="estado" value="En proceso"> En proceso</label><br>
+                    <label><input type="radio" name="estado" value="Finalizada"> Finalizada</label><br>
+                </div>
+            </div>
+
+            <button type="submit" id="reg">Registrar</button>
+        </form>
+    </main>
+    <script src="examen2p.js"></script>
+</body>
+</html>

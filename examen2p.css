@@ -1,0 +1,54 @@
+#encabezado{
+    background-color: #99F6E4;
+    padding: 30px 0;
+    text-align: center;
+}
+
+#titulo{
+    font-weight: bolder;
+    font-size: xx-large;
+    color: #0EA5A4;
+}
+
+#inicio{
+    font-weight: bolder;
+    font-style: italic;
+    color: #0EA5A4;
+}
+
+#formulario{
+    font-family: 'Times New Roman', Times, serif;
+    color: #0F172A;
+    text-align: center;
+}
+
+#nombrein{
+    color: #0F172A;
+    text-align: center;
+}
+
+#correoin{
+    color: #0F172A;
+    text-align: center;
+}
+
+#act{
+    color: #0F172A;
+    text-align: center;
+}
+
+#estadoact{
+    color: #0F172A;
+    text-align: center;
+}
+
+#reg{
+    color: #0F172A;
+    background-color: #0EA5A4;
+    cursor: pointer;
+    border: none;
+}
+
+#reg :hover{
+    background-color: #99F6E4;
+}

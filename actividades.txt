@@ -1,0 +1,3 @@
+null | null | null | Finalizada
+sofia | nat@gmail.com | Mantenimiento maquina 2 | Finalizada
+Natalia | natMV@gmail.com | Registro de ventas | En proceso

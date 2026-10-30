@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar actividad</title>
+    <link rel="stylesheet" href="examen2p.css">
+</head>
+<body>
+    <header id="encabezado">
+        <h1 id="titulo">CONTAPC</h1>
+        <div id="inicio">
+            <h3>Actualizar estado de una actividad</h3>
+        </div>
+    </header>
+
+    <main>
+        <form id="formulario" action="/actualizar" method="POST">
+            <h2>Actualizar actividad</h2>
+
+            <p id="mensaje"></p>
+
+            <div>
+                <label>Nombre del empleado</label><br>
+                <input type="text" name="nombre" required><br>
+            </div>
+
+            <div>
+                <label>Actividad designada</label><br>
+                <input type="text" name="actividad" required><br>
+            </div>
+
+            <div>
+                <label>Nuevo estado</label><br>
+                <select name="estado">
+                    <option>Pendiente</option>
+                    <option>En proceso</option>
+                    <option>Finalizada</option>
+                </select><br>
+            </div>
+
+            <button type="submit" id="reg">Actualizar</button>
+        </form>
+
+        <p style="text-align:center"><a href="/examen2p.html">Volver al formulario</a></p>
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const resultado = params.get('resultado');
+        const mensaje = document.getElementById('mensaje');
+
+        if (resultado === 'ok') {
+            mensaje.textContent = '¡Estado actualizado!';
+        } else if (resultado === 'noencontrada') {
+            mensaje.textContent = 'No se encontró esa actividad. Revisa el nombre y la actividad.';
+        }
+    </script>
+</body>
+</html>
